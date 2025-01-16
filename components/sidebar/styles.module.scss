@@ -1,0 +1,13 @@
+.sidebarWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-right: 1px solid #ccc;
+}
+
+.sidebarContent {
+  cursor: pointer;
+  margin-bottom: 30px;
+}

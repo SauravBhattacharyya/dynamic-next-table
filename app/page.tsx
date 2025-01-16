@@ -6,11 +6,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="mx-auto">
+    <main className="mx-auto min-w-screen min-h-screen flex flex-col">
       <Header />
-      <div className="flex">
+      <div className="flex flex-1 h-full">
         <Sidebar />
-        <div>
+        <div className="flex-1">
           <TableController />
           <DynamicTable />
         </div>
