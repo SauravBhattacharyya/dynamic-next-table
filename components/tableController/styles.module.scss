@@ -1,0 +1,58 @@
+.controllerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  .searchWrapper {
+    position: relative;
+    margin-right: 40px;
+    img {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+    }
+
+    input {
+      font-size: 14px;
+      border: 1px solid #d1d5db;
+      background-color: #f9fafb;
+      padding: 2px 4px 2px 40px;
+      border-radius: 8px;
+      color: #000;
+      width: 364px;
+      height: 37px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .controllerBtn {
+    background-color: #1f2a37;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    width: 85px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+  }
+}
+
+.controllerButtons {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  cursor: pointer;
+
+  p {
+    color: #1f2a37;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: 10px;
+  }
+}

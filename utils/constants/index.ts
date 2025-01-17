@@ -6,4 +6,13 @@ export const IMAGE = {
   CIRCLEIMAGE: "/icons/intersect-circle.svg",
   PUZZLEIMAGE: "/icons/puzzle-piece-01.svg",
   TABLEIMAGE: "/icons/table.svg",
+  SEARCHIMAGE: "/icons/search-sm.svg",
+  ROWIMAGE: "/icons/rows.svg",
+  COLUMNIMAGE: "/icons/column.svg",
+  FILTERIMAGE: "/icons/filter.svg",
+  SORTIMAGE: "/icons/sort.svg",
+  ENRICHIMAGE: "/icons/enrich.svg",
+  SHAREIMAGE: "/icons/share.svg",
+  DOWNLOADIMAGE: "/icons/download.svg",
+  DELETEIMAGE: "/icons/delete.svg",
 };
