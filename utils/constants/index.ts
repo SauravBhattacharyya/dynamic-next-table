@@ -10,7 +10,7 @@ export const IMAGE = {
   ADDIMAGE: "/icons/add.svg",
 };
 
-export const MODALTYPES = {
+export const MODALTYPE = {
   ADDROW: "Add Row",
   DELETEROW: "Delete Row",
   ADDCOLUMN: "Add Column",
