@@ -1,18 +1,18 @@
 export const IMAGE = {
-  BACKBUTTON: "/icons/arrow-left.svg",
-  PROFILEIMAGE: "/icons/user-03.svg",
-  COINSIMAGE: "/icons/coins-stacked-01.svg",
-  CREDITCARDIMAGE: "/icons/credit-card-02.svg",
-  CIRCLEIMAGE: "/icons/intersect-circle.svg",
-  PUZZLEIMAGE: "/icons/puzzle-piece-01.svg",
-  TABLEIMAGE: "/icons/table.svg",
   SEARCHIMAGE: "/icons/search-sm.svg",
   ROWIMAGE: "/icons/rows.svg",
   COLUMNIMAGE: "/icons/column.svg",
   FILTERIMAGE: "/icons/filter.svg",
   SORTIMAGE: "/icons/sort.svg",
-  ENRICHIMAGE: "/icons/enrich.svg",
   SHAREIMAGE: "/icons/share.svg",
   DOWNLOADIMAGE: "/icons/download.svg",
   DELETEIMAGE: "/icons/delete.svg",
+  ADDIMAGE: "/icons/add.svg",
+};
+
+export const MODALTYPES = {
+  ADDROW: "Add Row",
+  DELETEROW: "Delete Row",
+  ADDCOLUMN: "Add Column",
+  DELETECOLUMN: "Delete Column",
 };

@@ -10,14 +10,6 @@ export default function Header() {
   return (
     <header className={styles.headerWrapper}>
       <div className="flex items-center">
-        <div className="cursor-pointer">
-          <Image
-            src={IMAGE.BACKBUTTON}
-            alt="Back Button"
-            width={18}
-            height={18}
-          />
-        </div>
         <input
           className={styles.filenameInput}
           type="text"
@@ -28,14 +20,6 @@ export default function Header() {
       </div>
       <div className="flex items-center">
         <Toggle />
-        <div className={styles.profileImage}>
-          <Image
-            src={IMAGE.PROFILEIMAGE}
-            alt="Profile Image"
-            width={18}
-            height={18}
-          />
-        </div>
       </div>
     </header>
   );

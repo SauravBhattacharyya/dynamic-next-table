@@ -25,16 +25,6 @@ export default function TableController() {
         <ControllerButtons image={IMAGE.SORTIMAGE} label="Sort" />
       </div>
       <div className="flex items-center">
-        <button type="button" className={styles.controllerBtn}>
-          <Image
-            src={IMAGE.ENRICHIMAGE}
-            alt="button"
-            width={13}
-            height={13}
-            className="mr-1"
-          />
-          <span className="ml-1">Enrich</span>
-        </button>
         <Image
           src={IMAGE.SHAREIMAGE}
           alt="Share"
