@@ -10,4 +10,10 @@ export interface AppContextType {
     | (ColDef<RowDataType, any> | ColGroupDef<RowDataType>)[]
     | null
     | undefined;
+  handleAddColumn: () => void;
+  handleAddRow: () => void;
 }
+
+export type ModalTypes = {
+  type: "Add Row" | "Add Column" | "Delete Row" | "Delete Column";
+};

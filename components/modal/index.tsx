@@ -1,12 +1,10 @@
+import { ModalTypes } from "@/types";
 import { FC } from "react";
 
-type ModalTypes = {
-  type: "Add Row" | "Add Column" | "Delete Row" | "Delete Column";
-};
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  type: ModalTypes;
+  type?: ModalTypes;
 }
 
 const Modal: FC<ModalProps> = ({ isOpen, onClose, type }) => {

@@ -41,4 +41,14 @@
     line-height: 18px;
     margin-left: 10px;
   }
+  &.disabled {
+    cursor: default;
+    img {
+      opacity: 0.3;
+    }
+    p {
+      color: #ccc;
+      font-weight: 300;
+    }
+  }
 }

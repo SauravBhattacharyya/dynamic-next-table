@@ -4,9 +4,17 @@ import { IMAGE } from "@/utils/constants";
 import Image from "next/image";
 import { useState } from "react";
 import ControllerButtons from "./controllerButtons";
+import { useAppContext } from "@/context/appContext";
+import { ModalTypes } from "@/types";
 
 export default function TableController() {
+  const { handleAddColumn, handleAddRow, columnDefs } = useAppContext();
   const [searchVal, setSearchVal] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<ModalTypes | null>(null);
+
+  const addNewColumm = () => {};
+
   return (
     <section className={styles.controllerWrapper}>
       <div className="flex items-center">
@@ -19,9 +27,18 @@ export default function TableController() {
             onChange={(e) => setSearchVal(e.target.value)}
           />
         </div>
-        <ControllerButtons image={IMAGE.ROWIMAGE} label="1/1 Row" />
-        <ControllerButtons image={IMAGE.COLUMNIMAGE} label="3/3 Column" />
-        <ControllerButtons image={IMAGE.FILTERIMAGE} label="0 Filter" />
+        <ControllerButtons
+          image={IMAGE.COLUMNIMAGE}
+          label="Add Column"
+          onClick={addNewColumm}
+        />
+        <ControllerButtons
+          image={IMAGE.ROWIMAGE}
+          label="Add Row"
+          onClick={handleAddRow}
+          isDisabled={!columnDefs?.length}
+        />
+        <ControllerButtons image={IMAGE.FILTERIMAGE} label="Filter" />
         <ControllerButtons image={IMAGE.SORTIMAGE} label="Sort" />
       </div>
       <div className="flex items-center">
