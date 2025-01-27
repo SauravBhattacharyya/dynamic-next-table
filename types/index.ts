@@ -1,4 +1,9 @@
 import { ColDef, ColGroupDef } from "ag-grid-community";
+import { ReactNode } from "react";
+
+export type ModalOnCloseType = (
+  arg: { columnId: string; columnName: string } | boolean
+) => void;
 
 export type RowDataType = {
   id: number;
@@ -10,10 +15,15 @@ export interface AppContextType {
     | (ColDef<RowDataType, any> | ColGroupDef<RowDataType>)[]
     | null
     | undefined;
-  handleAddColumn: () => void;
-  handleAddRow: () => void;
+  isModalOpen: boolean;
+  modalType: string | null;
+  handleModalOpen: (arg1: string) => void;
+  handleModalClose: ModalOnCloseType;
 }
 
-export type ModalTypes = {
-  type: "Add Row" | "Add Column" | "Delete Row" | "Delete Column";
-};
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: ModalOnCloseType;
+  children: ReactNode;
+  type: string | null;
+}

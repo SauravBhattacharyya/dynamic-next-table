@@ -1,9 +1,9 @@
 "use client";
 
 import { AppContextType, RowDataType } from "@/types";
+import { MODALTYPE } from "@/utils/constants";
 import { ColDef, ColGroupDef } from "ag-grid-community";
 import { createContext, ReactNode, useContext, useState } from "react";
-import { toast } from "react-toastify";
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
@@ -12,12 +12,40 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [columnDefs, setColumnDefs] = useState<
     (ColDef<RowDataType, any> | ColGroupDef<RowDataType>)[] | null | undefined
   >(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [modalType, setModalType] = useState<string | null>(null);
 
-  const handleAddColumn = () => {};
+  const handleModalOpen = (val: string) => {
+    setModalType(val);
+    setIsModalOpen(true);
+  };
 
-  const handleAddRow = () => {
-    if (columnDefs?.length) {
+  const handleModalClose = (
+    obj: { columnId: string; columnName: string } | boolean
+  ) => {
+    if (typeof obj !== "boolean") {
+      if (modalType === MODALTYPE.ADDCOLUMN) {
+        handleAddColumn(obj);
+      }
     }
+    setModalType(null);
+    setIsModalOpen(false);
+  };
+
+  const handleAddColumn = (
+    obj: { columnId: string; columnName: string } | boolean
+  ) => {
+    if (typeof obj === "boolean") return;
+    const { columnId, columnName } = obj;
+    const newColumn = {
+      headerName: columnName,
+      field: columnId,
+      sortable: true,
+      filter: true,
+    };
+    setColumnDefs((prevDefs) =>
+      prevDefs ? [...prevDefs, newColumn] : [newColumn]
+    );
   };
 
   return (
@@ -25,8 +53,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       value={{
         rowData,
         columnDefs,
-        handleAddColumn,
-        handleAddRow,
+        isModalOpen,
+        modalType,
+        handleModalOpen,
+        handleModalClose,
       }}
     >
       {children}

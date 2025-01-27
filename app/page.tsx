@@ -1,6 +1,4 @@
-import DynamicTable from "@/components/dynamicTable";
-import Header from "@/components/header";
-import TableController from "@/components/tableController";
+import MainComoponent from "@/components/mainComponent";
 import { AppProvider } from "@/context/appContext";
 import { Bounce, ToastContainer } from "react-toastify";
 
@@ -8,13 +6,7 @@ export default function Home() {
   return (
     <>
       <AppProvider>
-        <main className="mx-auto min-w-screen min-h-screen flex flex-col">
-          <Header />
-          <div className="flex flex-col h-full">
-            <TableController />
-            <DynamicTable />
-          </div>
-        </main>
+        <MainComoponent />
         <ToastContainer
           position="bottom-right"
           autoClose={4000}

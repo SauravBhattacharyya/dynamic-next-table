@@ -1,23 +1,14 @@
 "use client";
 import { AgGridReact } from "ag-grid-react";
-import React, { useState } from "react";
+import React from "react";
 import {
   AllCommunityModule,
-  ColDef,
-  ColGroupDef,
   ModuleRegistry,
   themeQuartz,
 } from "ag-grid-community";
-import Image from "next/image";
-import { IMAGE } from "@/utils/constants";
 import { useAppContext } from "@/context/appContext";
 
 ModuleRegistry.registerModules([AllCommunityModule]);
-
-interface RowData {
-  id: number;
-  [key: string]: string | number | null;
-}
 
 export default function DynamicTable() {
   const { rowData, columnDefs } = useAppContext();
